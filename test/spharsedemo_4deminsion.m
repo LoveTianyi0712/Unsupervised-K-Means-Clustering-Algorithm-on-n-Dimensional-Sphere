@@ -1,7 +1,7 @@
 clc, clear
 % 设置球半径和点的数量
 r = 1;
-N = 100;
+N = 200;
 
 % 在球面上随机生成点
 phi_1 = pi* 1/6 * rand(N,1);
@@ -49,7 +49,7 @@ params.isStopped = @IsStopped;
 params.initstepsize  = 0.01;
 params.linesearch = @LinesearchBacktracking;
 params.Tolerance = 1e-3;
-params.converge_rate = 250;
+params.converge_rate = 20;
 [centroids, info] = u_k_means(data, params);
 
 fprintf("Converged after %d iterations, clusters number: %d, time used: %f\n", info.t, info.clusters(info.t), info.time);
